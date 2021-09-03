@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Test {
     public static void main(String[] args) {
         int myFavoriteNumber = 13;
@@ -23,5 +25,9 @@ public class Test {
         int y = 4;
         x *= y;
         System.out.println(x);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string");
+        String name = scanner.nextLine();
+        System.out.println(name);
     }
 }
