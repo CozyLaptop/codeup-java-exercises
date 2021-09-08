@@ -3,12 +3,19 @@ import java.util.Scanner;
 public class MethodsMiniExercises {
     // TODO: break the following code apart into a few methods
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        seeIfItMatches();
+    }
+    private static String stringInput(Scanner sc){
         System.out.println("Please enter an input.");
-        String stringInput = sc.nextLine();
+        return sc.nextLine();
+    }
+    private static int askForInt(Scanner sc){
         System.out.println("Please enter an integer.");
-        int intInput = sc.nextInt(); // assume the user will enter a valid integer
-        if (stringInput.length() == intInput) {
+        return sc.nextInt();
+    }
+    private static void seeIfItMatches(){
+        Scanner sc = new Scanner(System.in);
+        if (stringInput(sc).length() == askForInt(sc)) {
             System.out.println("That matches the length of the input!");
         } else {
             System.out.println("That doesn't match the length of the input!");
