@@ -44,15 +44,28 @@ public class MethodsExercises {
             createFactorial(currentNum, inputNum, result);
         } else System.out.println(" Result: " + result);
     }
+    private static void diceRoll() {
+        System.out.println("How many sides on this dice?");
+        int sidesOnDice = sc.nextInt();
+        int diceResult1 = getRandomNumber(sidesOnDice);
+        int diceResult2 = getRandomNumber(sidesOnDice);
+        System.out.println(diceResult1);
+        System.out.println(diceResult2);
+    }
+
+    private static int getRandomNumber(int sidesOnDice) {
+        return (int) Math.floor(Math.random() * sidesOnDice);
+    }
 
     public static void main(String[] args) {
-//        System.out.println(addition(10, 20));
-//        System.out.println(subtraction(10, 20));
-//        System.out.println(multiplication(10, 20));
-//        System.out.println(division(10, 20));
-//        System.out.println(modulus(10, 20));
-//        int userInput = getInteger(1, 10);
-//        System.out.println(userInput);
+        System.out.println(addition(10, 20));
+        System.out.println(subtraction(10, 20));
+        System.out.println(multiplication(10, 20));
+        System.out.println(division(10, 20));
+        System.out.println(modulus(10, 20));
+        int userInput = getInteger(1, 10);
+        System.out.println(userInput);
         factorial();
+        diceRoll();
     }
 }
