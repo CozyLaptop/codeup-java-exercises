@@ -5,6 +5,9 @@ public class Circle {
 
     public Circle(int radius){
         this.radius = radius;
+        System.out.println(getArea());
+        System.out.println(getRadius());
+        System.out.println(getCircumference());
     }
     public void setRadius(double radius) {
         this.radius = radius;
@@ -13,7 +16,7 @@ public class Circle {
         return radius;
     }
     public double getArea(){
-        return 3.14 * (radius * 2);
+        return 3.14 * (radius * radius);
     }
     public double getCircumference(){
         return radius * 3.14 * 2;
