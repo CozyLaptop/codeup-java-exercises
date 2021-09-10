@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Employee {
+public class Employee {
+    public String name;
+    public static String company = "Veridian Dynamics";
 }
