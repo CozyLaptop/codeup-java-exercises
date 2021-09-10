@@ -3,7 +3,7 @@ public class Chicken {
     String sound;
     int eggCount;
     public void makeNoise(){
-        System.out.println(name + " makes the sound " + sound);
+        System.out.println(name + " says: " + Quote.randomQuote());
     }
     public void layEgg(){
         System.out.println("You laid an egg");

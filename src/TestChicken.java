@@ -4,6 +4,8 @@ public class TestChicken {
         lilChicken.name = "Booster";
         lilChicken.sound = "Ba kah!";
         lilChicken.makeNoise();
+        lilChicken.makeNoise();
+        lilChicken.makeNoise();
         lilChicken.layEgg();
         lilChicken.layEgg();
         lilChicken.layEgg();
