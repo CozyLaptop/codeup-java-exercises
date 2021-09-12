@@ -24,5 +24,6 @@ public class AdventureGame {
             randomMonster = new Monster("DRAGON", 1000, 5326);
         }
         System.out.println("You've encountered a " + randomMonster.monsterName);
+        System.out.println("What");
     }
 }
