@@ -43,13 +43,19 @@ public class AdventureGame {
                 } else if (command == 2) {
                     hero.drinkPotion();
                 } else if (command == 3) {
-
+                    System.out.println("Cannot run!");
                 } else {
                     System.out.println("Invalid command!");
                     printBattleScript(hero, randomMonster);
                 }
                 if (randomMonster.getMonsterHealth() <= 0){
                     System.out.println(hero.getName().toUpperCase() + " killed the " + randomMonster.getMonsterName());
+                    System.out.println("Would you like to venture further? (Enter 'y' to continue)");
+                    if (sc.nextLine().equals("y")) {
+                        StartBattle(hero);
+                    } else {
+                        System.out.println("Thanks for playing, " + hero.getName().toUpperCase() + "!");
+                    }
                 } else {
                     hero.takeDamage(randomMonster.attack());
                     printBattleScript(hero, randomMonster);
@@ -58,6 +64,8 @@ public class AdventureGame {
                 System.out.println("Invalid command!");
                 printBattleScript(hero, randomMonster);
             }
+        } else {
+            System.out.println(hero.getName().toUpperCase() + " passed out.");
         }
     }
 }
