@@ -1,6 +1,6 @@
 public class Monster {
     private String monsterName;
-    int monsterHealth;
+    private int monsterHealth;
     int monsterXp;
     public Monster(String name, int health, int xp) {
         monsterName = name;
@@ -9,5 +9,12 @@ public class Monster {
     }
     public String getMonsterName() {
         return monsterName;
+    }
+    public void takeDamage(int damage){
+        monsterHealth -= damage;
+    }
+
+    public int getMonsterHealth() {
+        return monsterHealth;
     }
 }

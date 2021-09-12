@@ -30,19 +30,27 @@ public class AdventureGame {
         printBattleScript(hero, randomMonster);
     }
     private static void printBattleScript(Hero hero, Monster randomMonster){
-        System.out.println(hero.getName() + ":" +
-                " HP[" + hero.getHP()+"]" + " MP[" + hero.getMP() + "]");
-        System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion [3]Run");
-        int command = sc.nextInt();
-        if (command == 1){
+        if (hero.getHP() > 0) {
+            System.out.println(hero.getName() + ":" +
+                    " HP[" + hero.getHP() + "]" + " MP[" + hero.getMP() + "]" +
+                    " [CLAYMORE]");
+            System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion [3]Run");
+            int command = sc.nextInt();
+            if (command == 1) {
+                randomMonster.takeDamage(5);
+            } else if (command == 2) {
 
-        } else if (command == 2){
+            } else if (command == 3) {
 
-        } else if (command == 3){
-
-        } else {
-            System.out.println("Invalid command!");
-            printBattleScript(hero, randomMonster);
+            } else {
+                System.out.println("Invalid command!");
+                printBattleScript(hero, randomMonster);
+            }
+            if (randomMonster.getMonsterHealth() <= 0){
+                System.out.println("You've killed the " + randomMonster.getMonsterName());
+            } else {
+                printBattleScript(hero, randomMonster);
+            }
         }
     }
 }
