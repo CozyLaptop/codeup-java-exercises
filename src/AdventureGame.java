@@ -1,19 +1,21 @@
 import java.util.Scanner;
 
 public class AdventureGame {
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter 'y' to start.");
         if (sc.nextLine().equals("y")){
             System.out.println("What is your name?");
             String name = sc.nextLine();
-            StartBattle(name);
+            Hero hero = new Hero(name, "knight", 10, 10);
+            StartBattle(hero);
         } else {
             System.out.println("Farewell, adventurer.");
         }
     }
-    private static void StartBattle(String name){
-        System.out.println(name + ", something is nearby..");
+    private static void StartBattle(Hero hero){
+        System.out.println(hero.getName() + ", something is nearby..");
         Monster randomMonster;
         int randomMonsterId = (int) Math.floor(Math.random() * 3 + 1);
         if (randomMonsterId == 1){
@@ -23,7 +25,24 @@ public class AdventureGame {
         } else {
             randomMonster = new Monster("DRAGON", 1000, 5326);
         }
-        System.out.println("You've encountered a " + randomMonster.monsterName);
-        System.out.println("What");
+        System.out.println(randomMonster.getMonsterName() + " draws near!");
+        System.out.println("----------------");
+        printBattleScript(hero, randomMonster);
+    }
+    private static void printBattleScript(Hero hero, Monster randomMonster){
+        System.out.println(hero.getName() + ":" +
+                " HP[" + hero.getHP()+"]" + " MP[" + hero.getMP() + "]");
+        System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion [3]Run");
+        int command = sc.nextInt();
+        if (command == 1){
+
+        } else if (command == 2){
+
+        } else if (command == 3){
+
+        } else {
+            System.out.println("Invalid command!");
+            printBattleScript(hero, randomMonster);
+        }
     }
 }
