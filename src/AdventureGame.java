@@ -8,7 +8,7 @@ public class AdventureGame {
         if (sc.nextLine().equals("y")){
             System.out.println("What is your name?");
             String name = sc.nextLine();
-            Hero hero = new Hero(name, "knight", 10, 10);
+            Hero hero = new Hero(name, "knight", 20, 10);
             StartBattle(hero);
         } else {
             System.out.println("Farewell, adventurer.");
@@ -32,23 +32,30 @@ public class AdventureGame {
     private static void printBattleScript(Hero hero, Monster randomMonster){
         if (hero.getHP() > 0) {
             System.out.println(hero.getName() + ":" +
-                    " HP[" + hero.getHP() + "]" + " MP[" + hero.getMP() + "]" +
+                    " HP[" + hero.getHP() + "/" + hero.getMaxHP() + "]" + " MP[" + hero.getMP() + "]" +
                     " [CLAYMORE]");
             System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion [3]Run");
-            int command = sc.nextInt();
-            if (command == 1) {
-                randomMonster.takeDamage(5);
-            } else if (command == 2) {
+            int command;
+            try{
+                command = Integer.parseInt(sc.nextLine());
+                if (command == 1) {
+                    randomMonster.takeDamage(hero.attack());
+                } else if (command == 2) {
+                    hero.drinkPotion();
+                } else if (command == 3) {
 
-            } else if (command == 3) {
-
-            } else {
+                } else {
+                    System.out.println("Invalid command!");
+                    printBattleScript(hero, randomMonster);
+                }
+                if (randomMonster.getMonsterHealth() <= 0){
+                    System.out.println(hero.getName().toUpperCase() + " killed the " + randomMonster.getMonsterName());
+                } else {
+                    hero.takeDamage(randomMonster.attack());
+                    printBattleScript(hero, randomMonster);
+                }
+            } catch (Exception e){
                 System.out.println("Invalid command!");
-                printBattleScript(hero, randomMonster);
-            }
-            if (randomMonster.getMonsterHealth() <= 0){
-                System.out.println("You've killed the " + randomMonster.getMonsterName());
-            } else {
                 printBattleScript(hero, randomMonster);
             }
         }

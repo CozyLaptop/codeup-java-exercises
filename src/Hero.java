@@ -17,31 +17,40 @@ public class Hero {
         MP = maxMP;
         level = 1;
     }
-    public void makeNoise(){
-
-    }
 
     public String getName() {
         return name;
     }
-
-    public void getSound() {
-//        return sound;
-    }
-
     public int getHP() {
         return HP;
     }
-
     public void setHP(int HP) {
         this.HP = HP;
     }
-
     public int getMP() {
         return MP;
     }
-
     public void setMP(int MP) {
         this.MP = MP;
+    }
+    public int attack(){
+        int damage = 5;
+        System.out.println(name.toUpperCase() + " does " + damage + " damage!");
+        return damage;
+    }
+    public void takeDamage(int damage){
+        HP -= damage;
+    }
+
+    public int getMaxHP() {
+        return maxHP;
+    }
+    public void drinkPotion(){
+        System.out.println(this.name.toUpperCase() + " drinks a health potion");
+        System.out.println("+20 HP");
+        HP += 20;
+        if (HP > maxHP){
+            HP = maxHP;
+        }
     }
 }

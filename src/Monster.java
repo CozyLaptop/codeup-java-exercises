@@ -10,6 +10,11 @@ public class Monster {
     public String getMonsterName() {
         return monsterName;
     }
+    public int attack(){
+        int damage = 3;
+        System.out.println(this.monsterName + " does " + damage + " damage!");
+        return damage;
+    }
     public void takeDamage(int damage){
         monsterHealth -= damage;
     }
