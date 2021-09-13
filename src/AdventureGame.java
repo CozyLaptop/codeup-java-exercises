@@ -23,7 +23,7 @@ public class AdventureGame {
         } else if (randomMonsterId == 2){
             randomMonster = new Monster("ORC", 20, 120);
         } else {
-            randomMonster = new Monster("DRAGON", 1000, 5326);
+            randomMonster = new Monster("DRAGON", 100, 5326);
         }
         System.out.println(randomMonster.getMonsterName() + " draws near!");
         System.out.println("----------------");
@@ -43,7 +43,14 @@ public class AdventureGame {
                 } else if (command == 2) {
                     hero.drinkPotion();
                 } else if (command == 3) {
-                    System.out.println("Cannot run!");
+                    int tryToRunAway = (int) Math.floor(Math.random() * 3) + 1;
+//                    2/3 chance to run away
+                    if (tryToRunAway <= 2){
+                        System.out.println("Ran away successfully.");
+                        return;
+                    } else {
+                        System.out.println("Cannot run!");
+                    }
                 } else {
                     System.out.println("Invalid command!");
                     printBattleScript(hero, randomMonster);
