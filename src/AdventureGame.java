@@ -57,6 +57,7 @@ public class AdventureGame {
                 }
                 if (randomMonster.getMonsterHealth() <= 0){
                     System.out.println(hero.getName().toUpperCase() + " killed the " + randomMonster.getMonsterName());
+                    System.out.println("You gained " + randomMonster.getMonsterXp() + " experience points!");
                     System.out.println("Would you like to venture further? (Enter 'y' to continue)");
                     if (sc.nextLine().equals("y")) {
                         StartBattle(hero);

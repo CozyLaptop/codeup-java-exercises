@@ -34,7 +34,15 @@ public class Hero {
         this.MP = MP;
     }
     public int attack(){
-        int damage = 5;
+//        10% chance for critical hit
+        int damage;
+        int criticalHitChance = (int) Math.floor(Math.random() * 10 + 1);
+        if (criticalHitChance == 1){
+            System.out.println("Critical hit!");
+            damage = 12;
+        } else {
+            damage = 5;
+        }
         System.out.println(name.toUpperCase() + " does " + damage + " damage!");
         return damage;
     }

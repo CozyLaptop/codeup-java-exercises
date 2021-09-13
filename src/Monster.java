@@ -1,7 +1,7 @@
 public class Monster {
     private String monsterName;
     private int monsterHealth;
-    int monsterXp;
+    private int monsterXp;
     public Monster(String name, int health, int xp) {
         monsterName = name;
         monsterHealth = health;
@@ -21,5 +21,9 @@ public class Monster {
 
     public int getMonsterHealth() {
         return monsterHealth;
+    }
+
+    public int getMonsterXp() {
+        return monsterXp;
     }
 }
