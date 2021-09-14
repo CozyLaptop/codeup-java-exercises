@@ -9,6 +9,7 @@ public class VehicleTest {
         myAudi.setName("Addy");
         System.out.println(myAudi.getName());
         myAudi.makeNoise();
+        myAudi.breakDown();
     }
 
 }
