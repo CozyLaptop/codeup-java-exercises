@@ -8,7 +8,7 @@ public class VehicleTest {
 
         myAudi.setName("Addy");
         System.out.println(myAudi.getName());
-        vehicle.makeNoise();
+        myAudi.makeNoise();
     }
 
 }
