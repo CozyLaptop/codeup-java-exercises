@@ -1,6 +1,6 @@
-public class Audi extends Vehicle{
-    public Audi(){
-        this.setName("Audi");
+public class Chevy extends Vehicle{
+    public Chevy(){
+        this.setName("Chevy");
     }
     public void makeNoise() {
         System.out.println("Vroom vroom!");

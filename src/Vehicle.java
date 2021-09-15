@@ -3,11 +3,13 @@ public class Vehicle {
     public void makeNoise(){
         System.out.println("Beep beep!");
     }
-
     public String getName() {
-        return name;
+        try {
+            return name;
+        } catch (Exception e) {
+            return "EMPTY SPOT";
+        }
     }
-
     public void setName(String name) {
         this.name = name;
     }

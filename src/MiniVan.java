@@ -1,9 +1,9 @@
-public class Audi extends Vehicle{
-    public Audi(){
-        this.setName("Audi");
+public class MiniVan extends Vehicle{
+    public MiniVan(){
+        this.setName("MiniVan");
     }
     public void makeNoise() {
-        System.out.println("Vroom vroom!");
+        System.out.println("Mom car coming through!");
     }
     public void breakDown(){
         super.makeNoise();
