@@ -23,8 +23,13 @@ public class Garage {
         return carsInGarage;
     }
     private void displayCars() {
+
         for (Vehicle vehicle : getCarsInGarage()) {
-            System.out.println(vehicle.getName());
+            try {
+                System.out.println(vehicle.getName());
+            } catch (Exception e) {
+                System.out.println("EMPTY SPOT");
+            }
         }
     }
 
@@ -62,7 +67,7 @@ public class Garage {
         } else if (input == 2){
             garage.displayCars();
         } else if (input == 3){
-            System.out.println("Be safe out there");
+            System.out.println("Be safe out there.");
             return;
         }
         System.out.println("Enter 'y' to continue");
