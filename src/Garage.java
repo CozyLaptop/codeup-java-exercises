@@ -34,6 +34,9 @@ public class Garage {
     }
 
     public static void main(String[] args) {
+        newGarage();
+    }
+    private static void newGarage(){
         System.out.println("How many cars do you want to fit?");
         int carsDoesItFit = scanner.nextInt();
         Garage garage = new Garage(carsDoesItFit);
@@ -44,7 +47,8 @@ public class Garage {
         System.out.println("What would you like to do?");
         System.out.println("[1] Add a car");
         System.out.println("[2] See cars in garage");
-        System.out.println("[3] QUIT");
+        System.out.println("[3] New Garage");
+        System.out.println("[4] QUIT");
         int input = scanner.nextInt();
         if (input == 1){
             System.out.println("What kind of car do you want to add?");
@@ -67,13 +71,12 @@ public class Garage {
         } else if (input == 2){
             garage.displayCars();
         } else if (input == 3){
+            newGarage();
+        }
+        else if (input == 4){
             System.out.println("Be safe out there.");
             return;
         }
-        System.out.println("Enter 'y' to continue");
-        scanner.nextLine();
-        if (scanner.nextLine().equals("y")){
-            menu(garage);
-        }
+        menu(garage);
     }
 }
