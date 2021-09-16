@@ -10,6 +10,9 @@ public class VehicleTest {
         System.out.println(myAudi.getName());
         myAudi.makeNoise();
         myAudi.breakDown();
+
+        Vehicle celica = new Toyota_Celica();
+        celica.makeNoise();
     }
 
 }
