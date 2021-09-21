@@ -18,7 +18,13 @@ public class Input {
     }
     public int getInt(int min, int max){
         System.out.println("Enter a number between " + min + " and " + max);
-        int input = scanner.nextInt();
+        int input;
+        try{
+            input = scanner.nextInt();
+        }catch(Exception e){
+            System.out.println("Not a number!");
+            return getInt(min, max);
+        }
         if (input <= min || input >= max){
             return getInt(min, max);
         }
