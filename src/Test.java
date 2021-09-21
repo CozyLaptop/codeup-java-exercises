@@ -19,6 +19,6 @@ public class Test {
 //        System.out.println("Enter a string");
 //        String name = scanner.nextLine();
 //        System.out.println(name);
-        Shape shape = new Diamond("Diamond");
+//        Shape shape = new Diamond("Diamond");
     }
 }
