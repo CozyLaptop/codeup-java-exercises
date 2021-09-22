@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyMathMethodsTest {
@@ -15,5 +18,8 @@ public class MyMathMethodsTest {
         System.out.println("Enter another double(decimal number): ");
         double double2 = sc.nextDouble();
         System.out.println(MyMathMethods.multiply(double1, double2));
+        System.out.println(MyMathMethods.quotient(10,2));
+        List<Integer> nums = Arrays.asList(1,2,3,4,5);
+        System.out.println(MyMathMethods.sum(nums));
     }
 }
