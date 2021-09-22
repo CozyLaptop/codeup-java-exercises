@@ -20,8 +20,10 @@ public class Input {
         System.out.println("Enter a number between " + min + " and " + max);
         int input;
         try{
-            input = scanner.nextInt();
+            input = Integer.parseInt(getString());
+//            input = scanner.nextInt();
         }catch(Exception e){
+            e.printStackTrace();
             System.out.println("Not a number!");
             return getInt(min, max);
         }
