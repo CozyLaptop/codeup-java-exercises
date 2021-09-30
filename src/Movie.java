@@ -1,4 +1,4 @@
-public class Movie {
+public class Movie implements Entertains{
     private String name;
     private String director;
     public Movie(String name, String director){
@@ -20,5 +20,9 @@ public class Movie {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public void audienceReaction() {
+
     }
 }
