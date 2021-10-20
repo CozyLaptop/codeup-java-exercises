@@ -7,6 +7,7 @@ public class Hero {
     private int MP;
     private int XP;
     private int level;
+    private int potionCount;
 
     public Hero(String name, String characterClass, int maxHP, int maxMP){
         this.name = name;
@@ -16,6 +17,7 @@ public class Hero {
         HP = maxHP;
         MP = maxMP;
         level = 1;
+        potionCount = 5;
     }
 
     public String getName() {
@@ -53,12 +55,22 @@ public class Hero {
     public int getMaxHP() {
         return maxHP;
     }
-    public void drinkPotion(){
-        System.out.println(this.name.toUpperCase() + " drinks a health potion");
-        System.out.println("+20 HP");
-        HP += 20;
-        if (HP > maxHP){
-            HP = maxHP;
+    public void drinkPotion() {
+        if (this.potionCount > 0) {
+            System.out.println(this.name.toUpperCase() + " drinks a health potion");
+            potionCount--;
+            System.out.println("You have " + this.potionCount + " potions left.");
+            System.out.println("+20 HP");
+            HP += 20;
+            if (HP > maxHP) {
+                HP = maxHP;
+            }
+        } else {
+            System.out.println("You search your bag for a potion, but you do not find one.");
         }
     }
+
+//    private int getPotionCount() {
+//        return potionCount;
+//    }
 }
