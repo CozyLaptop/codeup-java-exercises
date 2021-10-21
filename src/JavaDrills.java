@@ -28,10 +28,25 @@ public class JavaDrills {
         }
         return sumOfList1 - sumOfList2;
     }
+    public static String flipInnerCase(String str){
+        StringBuilder newString = new StringBuilder();
+        for (int i = 0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if (i == 0 || i == str.length() - 1){
+                newString.append(c);
+            } else {
+                if (Character.isUpperCase(c)){
+                    newString.append(Character.toString(c).toLowerCase());
+                } else newString.append(Character.toString(c).toUpperCase());
+            }
+        }
+        return newString.toString();
+    }
     public static void main(String[] args) {
-        System.out.println(flipOuterCase("great"));
-        System.out.println(returnTotalDifference(Arrays.asList(10, 2, 3), Arrays.asList(1, 2, 3)));
-        System.out.println(returnTotalDifference(Arrays.asList(10, 1), Arrays.asList(1, 7)));
-        System.out.println(returnTotalDifference(Arrays.asList(10, 1), Arrays.asList(1, 7, 1)));
+//        System.out.println(flipOuterCase("great"));
+//        System.out.println(returnTotalDifference(Arrays.asList(10, 2, 3), Arrays.asList(1, 2, 3)));
+//        System.out.println(returnTotalDifference(Arrays.asList(10, 1), Arrays.asList(1, 7)));
+//        System.out.println(returnTotalDifference(Arrays.asList(10, 1), Arrays.asList(1, 7, 1)));
+        System.out.println(flipInnerCase("Flip"));
     }
 }
