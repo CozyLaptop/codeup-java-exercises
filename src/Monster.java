@@ -26,4 +26,8 @@ public class Monster {
     public int getMonsterXp() {
         return monsterXp;
     }
+
+    public boolean randomPotionGetter(){
+        return Math.floor(Math.random() * 10 + 1) <= 3;
+    }
 }

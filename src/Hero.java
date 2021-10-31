@@ -70,6 +70,10 @@ public class Hero {
         }
     }
 
+    public void addPotion() {
+        potionCount++;
+    }
+
 //    private int getPotionCount() {
 //        return potionCount;
 //    }
