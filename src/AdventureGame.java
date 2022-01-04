@@ -34,7 +34,7 @@ public class AdventureGame {
             System.out.println(hero.getName() + ":" +
                     " HP[" + hero.getHP() + "/" + hero.getMaxHP() + "]" + " MP[" + hero.getMP() + "]" +
                     " [CLAYMORE]");
-            System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion [3]Run");
+            System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion (" + hero.getPotionCount() + " left) " + "[3]Run");
             int command;
             try{
                 command = Integer.parseInt(sc.nextLine());

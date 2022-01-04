@@ -74,7 +74,7 @@ public class Hero {
         potionCount++;
     }
 
-//    private int getPotionCount() {
-//        return potionCount;
-//    }
+    public int getPotionCount() {
+        return potionCount;
+    }
 }
