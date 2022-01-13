@@ -32,7 +32,9 @@ public class AdventureGame {
     private static void printBattleScript(Hero hero, Monster randomMonster){
         if (hero.getHP() > 0) {
             System.out.println(hero.getName() + ":" + " HP[" + hero.getHP() + "/" + hero.getMaxHP() + "]" + " MP[" + hero.getMP() + "]" + " [CLAYMORE]");
-            System.out.println(randomMonster.getMonsterName() + ": " + "HP[" + randomMonster.getMonsterHealth() + "]");
+            if(randomMonster.getHasBeenExamined()){
+                System.out.println(randomMonster.getMonsterName() + ": " + "HP[" + randomMonster.getMonsterHealth() + "/" + randomMonster.getMonsterMaxHealth() + "]");
+            }
             System.out.println("COMMANDS: [1]:Attack [2]:Drink Potion (" + hero.getPotionCount() + " left) " + "[3]: Examine enemy " + "[4]:Run");
             int command;
             try{
@@ -43,6 +45,7 @@ public class AdventureGame {
                     hero.drinkPotion();
                 } else if (command == 3) {
 //                    Examine enemy and show health left
+                    randomMonster.setHasBeenExamined();
                     System.out.println("You examined the enemy");
                 } else if(command == 4) {
                     int tryToRunAway = (int) Math.floor(Math.random() * 3) + 1;
